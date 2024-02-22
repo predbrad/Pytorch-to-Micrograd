@@ -146,9 +146,9 @@ esac
 
 if [ "$skip_build" = "no" ]; then
 	echo "Building with base image: $framework"
-    sudo docker build -f install/Dockerfile --build-arg BASE_IMAGE=$framework $optional_installs $open_interpreter -t mlt$tag . $no_cache
+    sudo docker build -f install/Dockerfile --build-arg BASE_IMAGE=$framework $optional_installs $open_interpreter -t ptmg$tag . $no_cache
 fi
 
 echo "running with tag: mlt$tag"
-sudo docker run $use_gpu $user_setup -e OPENAI_API_KEY=$OPENAI_API_KEY -v $(pwd):/workspace -it --rm -p 8888:8888 mlt$tag $bashopt
+sudo docker run $use_gpu $user_setup -e OPENAI_API_KEY=$OPENAI_API_KEY -v $(pwd):/workspace -it --rm -p 8888:8888 ptmg$tag $bashopt
 

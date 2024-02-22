@@ -36,7 +36,9 @@ RUN pip install \
 	datasets \
 	tokenizers \
 	huggingface_hub \
-	accelerate 
+	accelerate \
+    micrograd \
+    tinygrad
 
 # optional installs that cause problems go here (like torchtext) 
 ARG OPTIONAL_INSTALLS=false
